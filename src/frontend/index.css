@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fraunces Variable Font ─────────────────────────────────── */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── General Sans Variable Font ─────────────────────────────── */
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* ─── Coffee Palette (OKLCH L C H) ─── */
+    /* Warm cream/ivory */
+    --background: 0.968 0.018 75;
+    /* Deep espresso */
+    --foreground: 0.22 0.04 55;
+
+    /* Card = light parchment */
+    --card: 0.978 0.014 72;
+    --card-foreground: 0.22 0.04 55;
+
+    --popover: 0.978 0.014 72;
+    --popover-foreground: 0.22 0.04 55;
+
+    /* Rich coffee brown */
+    --primary: 0.32 0.06 52;
+    --primary-foreground: 0.97 0.01 70;
+
+    /* Warm sand */
+    --secondary: 0.9 0.03 75;
+    --secondary-foreground: 0.28 0.05 52;
+
+    /* Muted warm */
+    --muted: 0.915 0.025 73;
+    --muted-foreground: 0.48 0.04 58;
+
+    /* Amber/golden accent */
+    --accent: 0.72 0.12 68;
+    --accent-foreground: 0.18 0.04 52;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders */
+    --border: 0.86 0.035 72;
+    --input: 0.86 0.035 72;
+    --ring: 0.55 0.07 60;
+
+    /* Charts */
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    /* Sidebar */
+    --sidebar: 0.978 0.014 72;
+    --sidebar-foreground: 0.22 0.04 55;
+    --sidebar-primary: 0.32 0.06 52;
+    --sidebar-primary-foreground: 0.97 0.01 70;
+    --sidebar-accent: 0.9 0.03 75;
+    --sidebar-accent-foreground: 0.28 0.05 52;
+    --sidebar-border: 0.86 0.035 72;
+    --sidebar-ring: 0.55 0.07 60;
+
+    /* ─── Custom Coffee Tokens ─── */
+    --espresso: 0.22 0.06 50;
+    --espresso-deep: 0.16 0.04 48;
+    --cream: 0.97 0.018 75;
+    --gold: 0.72 0.14 68;
+    --gold-light: 0.88 0.1 75;
+    --warm-brown: 0.45 0.07 55;
+    --coffee-mid: 0.55 0.08 52;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+  }
+  .font-body {
+    font-family: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  }
+  .text-espresso {
+    color: oklch(var(--espresso));
+  }
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+  .bg-espresso {
+    background-color: oklch(var(--espresso));
+  }
+  .bg-espresso-deep {
+    background-color: oklch(var(--espresso-deep));
+  }
+  .bg-cream {
+    background-color: oklch(var(--cream));
+  }
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+}
